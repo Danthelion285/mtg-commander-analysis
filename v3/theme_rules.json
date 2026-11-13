@@ -1,0 +1,3264 @@
+{
+  "version": 3,
+  "description": "Expanded approved direct-text and Oracle Tag mappings. Statistical candidates remain separate for review.",
+  "default_theme_threshold": 3.0,
+  "max_theme_score": 10.0,
+  "direct_rules": [
+    {
+      "theme": "Card Draw",
+      "weight": 3.0,
+      "patterns": [
+        "\\bdraw\\s+(?:a|one|two|three|four|five|six|seven|[0-9]+)\\s+cards?\\b",
+        "\\bdraw\\s+cards?\\s+equal\\s+to\\b"
+      ]
+    },
+    {
+      "theme": "Discard",
+      "weight": 3.0,
+      "patterns": [
+        "\\bdiscard\\s+(?:a|an|one|two|three|four|five|six|seven|[0-9]+|your|their|that many)\\s+cards?\\b",
+        "\\bdiscard\\s+your\\s+hand\\b"
+      ]
+    },
+    {
+      "theme": "Exile",
+      "weight": 3.0,
+      "patterns": [
+        "\\bexile\\s+(?:target|that|another|one|up to|all|each|the top|the)\\b",
+        "\\bexiled\\s+cards?\\b",
+        "\\bfrom\\s+exile\\b"
+      ]
+    },
+    {
+      "theme": "Mill",
+      "weight": 3.0,
+      "patterns": [
+        "\\bmill(?:s|ed)?\\s+(?:a|one|two|three|four|five|six|seven|[0-9]+|the top)\\b",
+        "\\bput\\s+the\\s+top\\s+\\w+\\s+cards?\\s+of\\s+(?:your|their|that player's)\\s+library\\s+into\\s+(?:your|their|that player's)\\s+graveyard\\b"
+      ]
+    },
+    {
+      "theme": "Self-Mill",
+      "weight": 3.0,
+      "patterns": [
+        "\\byou\\s+mill\\s+",
+        "\\bmill\\s+the\\s+top\\s+\\w+\\s+cards?\\s+of\\s+your\\s+library\\b",
+        "\\bput\\s+the\\s+top\\s+\\w+\\s+cards?\\s+of\\s+your\\s+library\\s+into\\s+your\\s+graveyard\\b"
+      ]
+    },
+    {
+      "theme": "Sacrifice",
+      "weight": 3.0,
+      "patterns": [
+        "\\bsacrifice\\s+(?:a|an|another|one|two|three|four|five|[0-9]+|target|each|all)\\b"
+      ]
+    },
+    {
+      "theme": "Lifegain",
+      "weight": 3.0,
+      "patterns": [
+        "\\bgain\\s+(?:\\w+\\s+){0,3}life\\b",
+        "\\byou\\s+gain\\s+life\\b"
+      ]
+    },
+    {
+      "theme": "Tokens",
+      "weight": 3.0,
+      "patterns": [
+        "\\bcreate\\s+(?:one|two|three|four|five|[0-9]+|a|an)\\s+(?:[0-9]+/[0-9]+\\s+)?(?:\\w+\\s+){0,4}tokens?\\b",
+        "\\bput\\s+(?:one|two|three|four|five|[0-9]+)\\s+(?:[0-9]+/[0-9]+\\s+)?(?:\\w+\\s+){0,3}tokens?\\s+onto\\s+the battlefield\\b"
+      ]
+    },
+    {
+      "theme": "Landfall",
+      "weight": 3.0,
+      "patterns": [
+        "\\bwhenever\\s+(?:a|one or more)\\s+lands?\\s+enters?\\s+the\\s+battlefield\\s+under\\s+your\\s+control\\b"
+      ]
+    },
+    {
+      "theme": "Card Draw",
+      "weight": 3.0,
+      "patterns": [
+        "\\bdraw\\s+(?:a|one|two|three|four|five|six|seven|[0-9]+)\\s+cards?\\b",
+        "\\bdraw\\s+cards?\\s+equal\\s+to\\b"
+      ]
+    },
+    {
+      "theme": "Counterspells",
+      "weight": 3.0,
+      "patterns": [
+        "\\bcounter\\s+target\\s+(?:spell|activated ability|triggered ability)\\b"
+      ]
+    },
+    {
+      "theme": "Cycling",
+      "weight": 3.0,
+      "patterns": [
+        "\\bcycling\\s+\\{",
+        "\\bcycle\\s+\\{"
+      ]
+    },
+    {
+      "theme": "Flashback",
+      "weight": 3.0,
+      "patterns": [
+        "\\bflashback\\s+\\{"
+      ]
+    },
+    {
+      "theme": "Land Destruction",
+      "weight": 3.0,
+      "patterns": [
+        "\\bdestroy\\s+target\\s+land\\b",
+        "\\bdestroy\\s+all\\s+lands\\b"
+      ]
+    },
+    {
+      "theme": "Landfall",
+      "weight": 3.0,
+      "patterns": [
+        "\\bwhenever\\s+(?:a|one or more)\\s+lands?\\s+enters?\\s+the battlefield\\b"
+      ]
+    },
+    {
+      "theme": "Lifegain",
+      "weight": 3.0,
+      "patterns": [
+        "\\byou\\s+gain\\s+(?:\\d+|X|life)\\s+life\\b",
+        "\\bgain\\s+(?:\\d+|X)\\s+life\\b"
+      ]
+    },
+    {
+      "theme": "Mill",
+      "weight": 3.0,
+      "patterns": [
+        "\\bmill\\s+(?:a|one|two|three|four|five|six|seven|[0-9]+)\\b"
+      ]
+    },
+    {
+      "theme": "Proliferate",
+      "weight": 3.0,
+      "patterns": [
+        "\\bproliferate\\b"
+      ]
+    },
+    {
+      "theme": "Ramp",
+      "weight": 3.0,
+      "patterns": [
+        "\\bsearch\\s+your library for\\s+(?:a|up to|one or two)\\s+basic lands?\\b",
+        "\\badd\\s+\\{[WUBRGC]\\}\\{?[WUBRGC]?\\}?\\s+for each\\b"
+      ]
+    },
+    {
+      "theme": "Reanimator",
+      "weight": 3.0,
+      "patterns": [
+        "\\breturn target creature card from your graveyard to the battlefield\\b",
+        "\\breturn target permanent card from your graveyard to the battlefield\\b"
+      ]
+    },
+    {
+      "theme": "Sacrifice",
+      "weight": 3.0,
+      "patterns": [
+        "\\bsacrifice\\s+(?:a|an|another|one|two|three|four|five|[0-9]+|target|each|all)\\s+(?:creature|artifact|permanent|token|land|food|treasure|clue)\\b"
+      ]
+    },
+    {
+      "theme": "Scry",
+      "weight": 3.0,
+      "patterns": [
+        "\\bscry\\s+[0-9X]+\\b"
+      ]
+    },
+    {
+      "theme": "Surveil",
+      "weight": 3.0,
+      "patterns": [
+        "\\bsurveil\\s+[0-9X]+\\b"
+      ]
+    },
+    {
+      "theme": "Tokens",
+      "weight": 3.0,
+      "patterns": [
+        "\\bcreate\\s+(?:one|two|three|four|five|[0-9]+|a|an)\\s+(?:\\w+\\s+){0,4}tokens?\\b"
+      ]
+    },
+    {
+      "theme": "Treasure",
+      "weight": 3.0,
+      "patterns": [
+        "\\bcreate\\s+(?:one|two|three|four|five|[0-9]+|a|an)\\s+treasure tokens?\\b"
+      ]
+    },
+    {
+      "theme": "Extra Turns",
+      "weight": 3.0,
+      "patterns": [
+        "\\btake an extra turn\\b"
+      ]
+    },
+    {
+      "theme": "Extra Combats",
+      "weight": 3.0,
+      "patterns": [
+        "\\bthere is an additional combat phase\\b",
+        "\\badditional combat phase\\b"
+      ]
+    },
+    {
+      "theme": "Blink",
+      "weight": 3.0,
+      "patterns": [
+        "\\bexile\\s+.*\\bthen return\\b"
+      ]
+    }
+  ],
+  "oracle_tag_rules": [
+    {
+      "tag": "recursion",
+      "theme": "Graveyard",
+      "weight": 5.0,
+      "confidence": 1.0
+    },
+    {
+      "tag": "reanimate",
+      "theme": "Graveyard",
+      "weight": 5.0,
+      "confidence": 1.0
+    },
+    {
+      "tag": "sacrifice-outlet",
+      "theme": "Sacrifice",
+      "weight": 5.0,
+      "confidence": 1.0
+    },
+    {
+      "tag": "repeatable-sacrifice-outlet",
+      "theme": "Sacrifice",
+      "weight": 5.0,
+      "confidence": 1.0
+    },
+    {
+      "tag": "discard-outlet",
+      "theme": "Discard",
+      "weight": 5.0,
+      "confidence": 1.0
+    },
+    {
+      "tag": "gives-castable-from-exile",
+      "theme": "Exile",
+      "weight": 5.0,
+      "confidence": 1.0
+    },
+    {
+      "tag": "synergy-equipment",
+      "theme": "Equipment",
+      "weight": 4.0,
+      "confidence": 0.9
+    },
+    {
+      "tag": "synergy-instant",
+      "theme": "Spellslinger",
+      "weight": 2.0,
+      "confidence": 1.0,
+      "group": "synergy",
+      "relationship": "direct"
+    },
+    {
+      "tag": "synergy-sorcery",
+      "theme": "Spellslinger",
+      "weight": 2.0,
+      "confidence": 1.0,
+      "group": "synergy",
+      "relationship": "direct"
+    },
+    {
+      "tag": "repeatable-creature-tokens",
+      "theme": "Tokens",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "repeatable-token-generation",
+      "relationship": "direct"
+    },
+    {
+      "tag": "repeatable-token-generator",
+      "theme": "Tokens",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "repeatable-token-generation",
+      "relationship": "direct"
+    },
+    {
+      "tag": "extra-combat-phase",
+      "theme": "Aggro",
+      "weight": 3.0,
+      "confidence": 1.0,
+      "group": "combat-pressure",
+      "relationship": "direct"
+    },
+    {
+      "tag": "attack-trigger",
+      "theme": "Aggro",
+      "weight": 1.5,
+      "confidence": 1.0,
+      "group": "combat-pressure",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "gains-pp-counters",
+      "theme": "1/+1 Counters",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "pp-counters",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gives-pp-counters",
+      "theme": "1/+1 Counters",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "pp-counters",
+      "relationship": "direct"
+    },
+    {
+      "tag": "counter-doubler",
+      "theme": "1/+1 Counters",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "pp-counters",
+      "relationship": "direct"
+    },
+    {
+      "tag": "counter-increaser",
+      "theme": "1/+1 Counters",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "pp-counters",
+      "relationship": "direct"
+    },
+    {
+      "tag": "pp-counters-matter",
+      "theme": "1/+1 Counters",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "pp-counters",
+      "relationship": "direct"
+    },
+    {
+      "tag": "counters-matter",
+      "theme": "1/+1 Counters",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "pp-counters",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "gains-mm-counters",
+      "theme": "-1/-1 Counters",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "mm-counters",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gives-mm-counters",
+      "theme": "-1/-1 Counters",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "mm-counters",
+      "relationship": "direct"
+    },
+    {
+      "tag": "mm-counters-matter",
+      "theme": "-1/-1 Counters",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "mm-counters",
+      "relationship": "direct"
+    },
+    {
+      "tag": "withering",
+      "theme": "-1/-1 Counters",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "mm-counters",
+      "relationship": "direct"
+    },
+    {
+      "tag": "activated-ability",
+      "theme": "Activated Abilities",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "activated",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "tap-outlet",
+      "theme": "Activated Abilities",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "activated",
+      "relationship": "direct"
+    },
+    {
+      "tag": "mana-sink",
+      "theme": "Activated Abilities",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "activated",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "synergy-activated-ability",
+      "theme": "Activated Abilities",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "activated",
+      "relationship": "direct"
+    },
+    {
+      "tag": "copy-ability",
+      "theme": "Activated Abilities",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "activated",
+      "relationship": "direct"
+    },
+    {
+      "tag": "adventure",
+      "theme": "Adventures",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "adventure",
+      "relationship": "direct"
+    },
+    {
+      "tag": "affinity",
+      "theme": "Affinity",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "affinity",
+      "relationship": "direct"
+    },
+    {
+      "tag": "artifact-cost-reducer",
+      "theme": "Affinity",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "affinity",
+      "relationship": "direct"
+    },
+    {
+      "tag": "attacking-matters-self",
+      "theme": "Aggro",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "combat-pressure",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "forced-attacker",
+      "theme": "Aggro",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "combat-pressure",
+      "relationship": "direct"
+    },
+    {
+      "tag": "haste",
+      "theme": "Aggro",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "combat-pressure",
+      "relationship": "direct"
+    },
+    {
+      "tag": "synergy-haste",
+      "theme": "Aggro",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "combat-pressure",
+      "relationship": "direct"
+    },
+    {
+      "tag": "aikido",
+      "theme": "Aikido",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "aikido",
+      "relationship": "direct"
+    },
+    {
+      "tag": "redirects-damage",
+      "theme": "Aikido",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "aikido",
+      "relationship": "direct"
+    },
+    {
+      "tag": "damage-redirection",
+      "theme": "Aikido",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "aikido",
+      "relationship": "direct"
+    },
+    {
+      "tag": "pariah",
+      "theme": "Aikido",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "aikido",
+      "relationship": "direct"
+    },
+    {
+      "tag": "all-spells",
+      "theme": "All Spells",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "all-spells",
+      "relationship": "direct"
+    },
+    {
+      "tag": "self-mill",
+      "theme": "All Spells",
+      "weight": 2,
+      "confidence": 1.0,
+      "group": "all-spells",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "amass",
+      "theme": "Amass",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "amass",
+      "relationship": "direct"
+    },
+    {
+      "tag": "annihilator",
+      "theme": "Annihilator",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "annihilator",
+      "relationship": "direct"
+    },
+    {
+      "tag": "anthem",
+      "theme": "Anthems",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "anthem",
+      "relationship": "direct"
+    },
+    {
+      "tag": "power-boost-to-all",
+      "theme": "Anthems",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "anthem",
+      "relationship": "direct"
+    },
+    {
+      "tag": "toughness-boost-to-all",
+      "theme": "Anthems",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "anthem",
+      "relationship": "direct"
+    },
+    {
+      "tag": "keyword-anthem",
+      "theme": "Anthems",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "anthem",
+      "relationship": "direct"
+    },
+    {
+      "tag": "death-trigger",
+      "theme": "Aristocrats",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "aristocrats",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "death-trigger-self",
+      "theme": "Aristocrats",
+      "weight": 2,
+      "confidence": 1.0,
+      "group": "aristocrats",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "sacrifice-outlet",
+      "theme": "Aristocrats",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "aristocrats",
+      "relationship": "direct"
+    },
+    {
+      "tag": "repeatable-sacrifice-outlet",
+      "theme": "Aristocrats",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "aristocrats",
+      "relationship": "direct"
+    },
+    {
+      "tag": "synergy-artifact",
+      "theme": "Artifacts",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "artifacts",
+      "relationship": "direct"
+    },
+    {
+      "tag": "artifact-matters",
+      "theme": "Artifacts",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "artifacts",
+      "relationship": "direct"
+    },
+    {
+      "tag": "artifact-token",
+      "theme": "Artifacts",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "artifacts",
+      "relationship": "direct"
+    },
+    {
+      "tag": "attack-trigger",
+      "theme": "Attack Triggers",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "attack-triggers",
+      "relationship": "direct"
+    },
+    {
+      "tag": "attacking-matters",
+      "theme": "Attack Triggers",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "attack-triggers",
+      "relationship": "direct"
+    },
+    {
+      "tag": "synergy-aura",
+      "theme": "Auras",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "auras",
+      "relationship": "direct"
+    },
+    {
+      "tag": "aura-matters",
+      "theme": "Auras",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "auras",
+      "relationship": "direct"
+    },
+    {
+      "tag": "bounce",
+      "theme": "Bounce",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "bounce",
+      "relationship": "direct"
+    },
+    {
+      "tag": "removal-bounce",
+      "theme": "Bounce",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "bounce",
+      "relationship": "direct"
+    },
+    {
+      "tag": "burn",
+      "theme": "Burn",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "burn",
+      "relationship": "direct"
+    },
+    {
+      "tag": "burn-any",
+      "theme": "Burn",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "burn",
+      "relationship": "direct"
+    },
+    {
+      "tag": "burn-player",
+      "theme": "Burn",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "burn",
+      "relationship": "direct"
+    },
+    {
+      "tag": "burn-creature",
+      "theme": "Burn",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "burn",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "removal-burn",
+      "theme": "Burn",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "burn",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "damage-multiplier",
+      "theme": "Burn",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "burn",
+      "relationship": "direct"
+    },
+    {
+      "tag": "damage-increaser",
+      "theme": "Burn",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "burn",
+      "relationship": "direct"
+    },
+    {
+      "tag": "cantrip",
+      "theme": "Cantrips",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "cantrips",
+      "relationship": "direct"
+    },
+    {
+      "tag": "draw-engine",
+      "theme": "Card Draw",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "draw",
+      "relationship": "direct"
+    },
+    {
+      "tag": "pure-draw",
+      "theme": "Card Draw",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "draw",
+      "relationship": "direct"
+    },
+    {
+      "tag": "repeatable-draw",
+      "theme": "Card Draw",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "draw",
+      "relationship": "direct"
+    },
+    {
+      "tag": "card-advantage",
+      "theme": "Card Draw",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "draw",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "repeatable-card-advantage",
+      "theme": "Card Draw",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "draw",
+      "relationship": "direct"
+    },
+    {
+      "tag": "burst-draw",
+      "theme": "Card Draw",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "draw",
+      "relationship": "direct"
+    },
+    {
+      "tag": "cascade",
+      "theme": "Cascade",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "cascade",
+      "relationship": "direct"
+    },
+    {
+      "tag": "clue-token",
+      "theme": "Clues",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "clues",
+      "relationship": "direct"
+    },
+    {
+      "tag": "clues-matter",
+      "theme": "Clues",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "clues",
+      "relationship": "direct"
+    },
+    {
+      "tag": "coin-flip",
+      "theme": "Coin Flip",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "coin-flip",
+      "relationship": "direct"
+    },
+    {
+      "tag": "combo",
+      "theme": "Combo",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "combo",
+      "relationship": "direct"
+    },
+    {
+      "tag": "combo-piece",
+      "theme": "Combo",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "combo",
+      "relationship": "direct"
+    },
+    {
+      "tag": "infinite-combo",
+      "theme": "Combo",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "combo",
+      "relationship": "direct"
+    },
+    {
+      "tag": "removal-permanent",
+      "theme": "Control",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "removal-exile",
+      "theme": "Control",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "removal-destroy",
+      "theme": "Control",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "removal-toughness",
+      "theme": "Control",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "multi-removal",
+      "theme": "Control",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "sweeper",
+      "theme": "Control",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "counterspell",
+      "theme": "Control",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "remove-from-stack",
+      "theme": "Control",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "theft",
+      "theme": "Control",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "control-changing-effects",
+      "theme": "Control",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "prevent-cast",
+      "theme": "Control",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "prevent-activation",
+      "theme": "Control",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "hate-color",
+      "theme": "Control",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "hate-target",
+      "theme": "Control",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "hate-removal-sacrifice",
+      "theme": "Control",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "removal-sacrifice",
+      "theme": "Control",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "control",
+      "relationship": "direct"
+    },
+    {
+      "tag": "counterspell",
+      "theme": "Counterspells",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "counterspells",
+      "relationship": "direct"
+    },
+    {
+      "tag": "remove-from-stack",
+      "theme": "Counterspells",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "counterspells",
+      "relationship": "direct"
+    },
+    {
+      "tag": "crime",
+      "theme": "Crime",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "crime",
+      "relationship": "direct"
+    },
+    {
+      "tag": "repeatable-crime",
+      "theme": "Crime",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "crime",
+      "relationship": "direct"
+    },
+    {
+      "tag": "cycling",
+      "theme": "Cycling",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "cycling",
+      "relationship": "direct"
+    },
+    {
+      "tag": "cycle",
+      "theme": "Cycling",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "cycling",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "cycling-matters",
+      "theme": "Cycling",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "cycling",
+      "relationship": "direct"
+    },
+    {
+      "tag": "deathtouch",
+      "theme": "Deathtouch",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "deathtouch",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gives-deathtouch",
+      "theme": "Deathtouch",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "deathtouch",
+      "relationship": "direct"
+    },
+    {
+      "tag": "defender-matters",
+      "theme": "Defenders",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "defenders",
+      "relationship": "direct"
+    },
+    {
+      "tag": "defender",
+      "theme": "Defenders",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "defenders",
+      "relationship": "direct"
+    },
+    {
+      "tag": "delirium",
+      "theme": "Delirium",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "delirium",
+      "relationship": "direct"
+    },
+    {
+      "tag": "card-types-in-graveyard-matter",
+      "theme": "Delirium",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "delirium",
+      "relationship": "direct"
+    },
+    {
+      "tag": "devotion",
+      "theme": "Devotion",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "devotion",
+      "relationship": "direct"
+    },
+    {
+      "tag": "discard",
+      "theme": "Discard",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "discard",
+      "relationship": "direct"
+    },
+    {
+      "tag": "hand-disruption",
+      "theme": "Discard",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "discard",
+      "relationship": "direct"
+    },
+    {
+      "tag": "ditch-hand",
+      "theme": "Discard",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "discard",
+      "relationship": "direct"
+    },
+    {
+      "tag": "discover",
+      "theme": "Discover",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "discover",
+      "relationship": "direct"
+    },
+    {
+      "tag": "donate",
+      "theme": "Donate",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "donate",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gives-control-of-permanent",
+      "theme": "Donate",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "donate",
+      "relationship": "direct"
+    },
+    {
+      "tag": "dredge",
+      "theme": "Dredge",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "dredge",
+      "relationship": "direct"
+    },
+    {
+      "tag": "venture-into-the-dungeon",
+      "theme": "Dungeon",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "dungeon",
+      "relationship": "direct"
+    },
+    {
+      "tag": "initiative",
+      "theme": "Dungeon",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "dungeon",
+      "relationship": "direct"
+    },
+    {
+      "tag": "etb-trigger",
+      "theme": "ETB",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "etb",
+      "relationship": "direct"
+    },
+    {
+      "tag": "enters-trigger",
+      "theme": "ETB",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "etb",
+      "relationship": "direct"
+    },
+    {
+      "tag": "enters-in-company",
+      "theme": "ETB",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "etb",
+      "relationship": "direct"
+    },
+    {
+      "tag": "eggs",
+      "theme": "Eggs",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "eggs",
+      "relationship": "direct"
+    },
+    {
+      "tag": "sacrifice-artifact-draw",
+      "theme": "Eggs",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "eggs",
+      "relationship": "direct"
+    },
+    {
+      "tag": "synergy-enchantment",
+      "theme": "Enchantress",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "enchantress",
+      "relationship": "direct"
+    },
+    {
+      "tag": "enchantment-matters",
+      "theme": "Enchantress",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "enchantress",
+      "relationship": "direct"
+    },
+    {
+      "tag": "enchantress",
+      "theme": "Enchantress",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "enchantress",
+      "relationship": "direct"
+    },
+    {
+      "tag": "energy",
+      "theme": "Energy",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "energy",
+      "relationship": "direct"
+    },
+    {
+      "tag": "energy-counter",
+      "theme": "Energy",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "energy",
+      "relationship": "direct"
+    },
+    {
+      "tag": "enrage",
+      "theme": "Enrage",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "enrage",
+      "relationship": "direct"
+    },
+    {
+      "tag": "damage-trigger",
+      "theme": "Enrage",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "enrage",
+      "relationship": "direct"
+    },
+    {
+      "tag": "equipment-matters",
+      "theme": "Equipment",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "equipment",
+      "relationship": "direct"
+    },
+    {
+      "tag": "evoke",
+      "theme": "Evoke",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "evoke",
+      "relationship": "direct"
+    },
+    {
+      "tag": "exalted",
+      "theme": "Exalted",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "exalted",
+      "relationship": "direct"
+    },
+    {
+      "tag": "synergy-solo-attack",
+      "theme": "Exalted",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "exalted",
+      "relationship": "direct"
+    },
+    {
+      "tag": "exile-self",
+      "theme": "Exile",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "exile",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "removal-exile",
+      "theme": "Exile",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "exile",
+      "relationship": "direct"
+    },
+    {
+      "tag": "impulse",
+      "theme": "Exile",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "exile",
+      "relationship": "direct"
+    },
+    {
+      "tag": "impulse-to-zone",
+      "theme": "Exile",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "exile",
+      "relationship": "direct"
+    },
+    {
+      "tag": "experience-counter",
+      "theme": "Experience Counters",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "experience",
+      "relationship": "direct"
+    },
+    {
+      "tag": "experience-counters-matter",
+      "theme": "Experience Counters",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "experience",
+      "relationship": "direct"
+    },
+    {
+      "tag": "extra-combat-phase",
+      "theme": "Extra Combats",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "extra-combat",
+      "relationship": "direct"
+    },
+    {
+      "tag": "extra-turn",
+      "theme": "Extra Turns",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "extra-turns",
+      "relationship": "direct"
+    },
+    {
+      "tag": "extra-turns",
+      "theme": "Extra Turns",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "extra-turns",
+      "relationship": "direct"
+    },
+    {
+      "tag": "fight",
+      "theme": "Fight",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "fight",
+      "relationship": "direct"
+    },
+    {
+      "tag": "fights",
+      "theme": "Fight",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "fight",
+      "relationship": "direct"
+    },
+    {
+      "tag": "flashback",
+      "theme": "Flashback",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "flashback",
+      "relationship": "direct"
+    },
+    {
+      "tag": "fling",
+      "theme": "Fling",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "fling",
+      "relationship": "direct"
+    },
+    {
+      "tag": "sacrifice-creature-deal-damage",
+      "theme": "Fling",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "fling",
+      "relationship": "direct"
+    },
+    {
+      "tag": "evasion-flying",
+      "theme": "Flying",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "flying",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gains-flying",
+      "theme": "Flying",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "flying",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gives-flying",
+      "theme": "Flying",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "flying",
+      "relationship": "direct"
+    },
+    {
+      "tag": "food-token",
+      "theme": "Food",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "food",
+      "relationship": "direct"
+    },
+    {
+      "tag": "food-matters",
+      "theme": "Food",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "food",
+      "relationship": "direct"
+    },
+    {
+      "tag": "forest-matters",
+      "theme": "Forests Matter",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "forests",
+      "relationship": "direct"
+    },
+    {
+      "tag": "forest-count-matters",
+      "theme": "Forests Matter",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "forests",
+      "relationship": "direct"
+    },
+    {
+      "tag": "foretell",
+      "theme": "Foretell",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "foretell",
+      "relationship": "direct"
+    },
+    {
+      "tag": "multiple-bodies",
+      "theme": "Go Wide",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "go-wide",
+      "relationship": "direct"
+    },
+    {
+      "tag": "creature-count-matters",
+      "theme": "Go Wide",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "go-wide",
+      "relationship": "direct"
+    },
+    {
+      "tag": "token-generator",
+      "theme": "Go Wide",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "go-wide",
+      "relationship": "direct"
+    },
+    {
+      "tag": "group-hug",
+      "theme": "Group Hug",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "group-hug",
+      "relationship": "direct"
+    },
+    {
+      "tag": "selective-group-hug",
+      "theme": "Group Hug",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "group-hug",
+      "relationship": "direct"
+    },
+    {
+      "tag": "group-slug",
+      "theme": "Group Slug",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "group-slug",
+      "relationship": "direct"
+    },
+    {
+      "tag": "opponent-loses-life",
+      "theme": "Group Slug",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "group-slug",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gives-haste",
+      "theme": "Haste",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "haste",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gains-haste",
+      "theme": "Haste",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "haste",
+      "relationship": "direct"
+    },
+    {
+      "tag": "hatebear",
+      "theme": "Hatebears",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "hatebears",
+      "relationship": "direct"
+    },
+    {
+      "tag": "hate",
+      "theme": "Hatebears",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "hatebears",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "tax",
+      "theme": "Hatebears",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "hatebears",
+      "relationship": "direct"
+    },
+    {
+      "tag": "heroic",
+      "theme": "Heroic",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "heroic",
+      "relationship": "direct"
+    },
+    {
+      "tag": "targeted-by-spell",
+      "theme": "Heroic",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "heroic",
+      "relationship": "direct"
+    },
+    {
+      "tag": "impulse",
+      "theme": "Impulse Draw",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "impulse",
+      "relationship": "direct"
+    },
+    {
+      "tag": "repeatable-impulse",
+      "theme": "Impulse Draw",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "impulse",
+      "relationship": "direct"
+    },
+    {
+      "tag": "impulse-onto-battlefield",
+      "theme": "Impulse Draw",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "impulse",
+      "relationship": "direct"
+    },
+    {
+      "tag": "infect",
+      "theme": "Infect",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "infect",
+      "relationship": "direct"
+    },
+    {
+      "tag": "poison-counter",
+      "theme": "Infect",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "infect",
+      "relationship": "direct"
+    },
+    {
+      "tag": "kicker",
+      "theme": "Kicker",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "kicker",
+      "relationship": "direct"
+    },
+    {
+      "tag": "animate-land",
+      "theme": "Land Animation",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "land-animation",
+      "relationship": "direct"
+    },
+    {
+      "tag": "lands-become-creatures",
+      "theme": "Land Animation",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "land-animation",
+      "relationship": "direct"
+    },
+    {
+      "tag": "land-destruction",
+      "theme": "Land Destruction",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "land-destruction",
+      "relationship": "direct"
+    },
+    {
+      "tag": "landfall",
+      "theme": "Landfall",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "landfall",
+      "relationship": "direct"
+    },
+    {
+      "tag": "thingfall",
+      "theme": "Landfall",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "landfall",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "creaturefall",
+      "theme": "Landfall",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "landfall",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "lands-matter",
+      "theme": "Lands Matter",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "lands-matter",
+      "relationship": "direct"
+    },
+    {
+      "tag": "land-count-matters",
+      "theme": "Lands Matter",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "lands-matter",
+      "relationship": "direct"
+    },
+    {
+      "tag": "lifedrain",
+      "theme": "Lifedrain",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "lifedrain",
+      "relationship": "direct"
+    },
+    {
+      "tag": "opponent-loses-life",
+      "theme": "Lifedrain",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "lifedrain",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "life-loss-matters",
+      "theme": "Lifedrain",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "lifedrain",
+      "relationship": "direct"
+    },
+    {
+      "tag": "lifegain",
+      "theme": "Lifegain",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "lifegain",
+      "relationship": "direct"
+    },
+    {
+      "tag": "repeatable-lifegain",
+      "theme": "Lifegain",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "lifegain",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gains-life",
+      "theme": "Lifegain",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "lifegain",
+      "relationship": "direct"
+    },
+    {
+      "tag": "looting",
+      "theme": "Looting",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "looting",
+      "relationship": "direct"
+    },
+    {
+      "tag": "rummage",
+      "theme": "Looting",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "looting",
+      "relationship": "direct"
+    },
+    {
+      "tag": "rummage-to-library",
+      "theme": "Looting",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "looting",
+      "relationship": "direct"
+    },
+    {
+      "tag": "lure",
+      "theme": "Lure",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "lure",
+      "relationship": "direct"
+    },
+    {
+      "tag": "forced-block",
+      "theme": "Lure",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "lure",
+      "relationship": "direct"
+    },
+    {
+      "tag": "madness",
+      "theme": "Madness",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "madness",
+      "relationship": "direct"
+    },
+    {
+      "tag": "mana-dork",
+      "theme": "Mana Dorks",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "mana-dorks",
+      "relationship": "direct"
+    },
+    {
+      "tag": "mana-producer-creature",
+      "theme": "Mana Dorks",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "mana-dorks",
+      "relationship": "direct"
+    },
+    {
+      "tag": "mana-rock",
+      "theme": "Mana Rocks",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "mana-rocks",
+      "relationship": "direct"
+    },
+    {
+      "tag": "mana-producer-artifact",
+      "theme": "Mana Rocks",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "mana-rocks",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gains-menace",
+      "theme": "Menace",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "menace",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gives-menace",
+      "theme": "Menace",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "menace",
+      "relationship": "direct"
+    },
+    {
+      "tag": "mill",
+      "theme": "Mill",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "mill",
+      "relationship": "direct"
+    },
+    {
+      "tag": "mill-self",
+      "theme": "Mill",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "mill",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "miracle",
+      "theme": "Miracles",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "miracles",
+      "relationship": "direct"
+    },
+    {
+      "tag": "modal",
+      "theme": "Modal Spells",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "modal",
+      "relationship": "direct"
+    },
+    {
+      "tag": "modal-spell",
+      "theme": "Modal Spells",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "modal",
+      "relationship": "direct"
+    },
+    {
+      "tag": "modified",
+      "theme": "Modified Creatures",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "modified",
+      "relationship": "direct"
+    },
+    {
+      "tag": "modified-creature",
+      "theme": "Modified Creatures",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "modified",
+      "relationship": "direct"
+    },
+    {
+      "tag": "modular",
+      "theme": "Modular",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "modular",
+      "relationship": "direct"
+    },
+    {
+      "tag": "monarch",
+      "theme": "Monarch",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "monarch",
+      "relationship": "direct"
+    },
+    {
+      "tag": "morph",
+      "theme": "Morph",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "morph",
+      "relationship": "direct"
+    },
+    {
+      "tag": "disguise",
+      "theme": "Morph",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "morph",
+      "relationship": "direct"
+    },
+    {
+      "tag": "mountain-matters",
+      "theme": "Mountains Matter",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "mountains",
+      "relationship": "direct"
+    },
+    {
+      "tag": "mountain-count-matters",
+      "theme": "Mountains Matter",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "mountains",
+      "relationship": "direct"
+    },
+    {
+      "tag": "myriad",
+      "theme": "Myriad",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "myriad",
+      "relationship": "direct"
+    },
+    {
+      "tag": "ninjutsu",
+      "theme": "Ninjutsu",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "ninjutsu",
+      "relationship": "direct"
+    },
+    {
+      "tag": "sneak",
+      "theme": "Ninjutsu",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "ninjutsu",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "offspring",
+      "theme": "Offspring",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "offspring",
+      "relationship": "direct"
+    },
+    {
+      "tag": "outlaw-matters",
+      "theme": "Outlaws",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "outlaws",
+      "relationship": "direct"
+    },
+    {
+      "tag": "typal-outlaw",
+      "theme": "Outlaws",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "outlaws",
+      "relationship": "direct"
+    },
+    {
+      "tag": "party-matters",
+      "theme": "Party",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "party",
+      "relationship": "direct"
+    },
+    {
+      "tag": "party-member",
+      "theme": "Party",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "party",
+      "relationship": "direct"
+    },
+    {
+      "tag": "phasing",
+      "theme": "Phasing",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "phasing",
+      "relationship": "direct"
+    },
+    {
+      "tag": "prevent-attack",
+      "theme": "Pillow Fort",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "pillow-fort",
+      "relationship": "direct"
+    },
+    {
+      "tag": "attack-tax",
+      "theme": "Pillow Fort",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "pillow-fort",
+      "relationship": "direct"
+    },
+    {
+      "tag": "hate-attacking",
+      "theme": "Pillow Fort",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "pillow-fort",
+      "relationship": "direct"
+    },
+    {
+      "tag": "pinger",
+      "theme": "Pingers",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "pingers",
+      "relationship": "direct"
+    },
+    {
+      "tag": "tap-deal-damage",
+      "theme": "Pingers",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "pingers",
+      "relationship": "direct"
+    },
+    {
+      "tag": "synergy-planeswalker",
+      "theme": "Planeswalkers",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "planeswalkers",
+      "relationship": "direct"
+    },
+    {
+      "tag": "planeswalker-matters",
+      "theme": "Planeswalkers",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "planeswalkers",
+      "relationship": "direct"
+    },
+    {
+      "tag": "politics",
+      "theme": "Politics",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "politics",
+      "relationship": "direct"
+    },
+    {
+      "tag": "voting",
+      "theme": "Politics",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "politics",
+      "relationship": "direct"
+    },
+    {
+      "tag": "villainous-choice",
+      "theme": "Politics",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "politics",
+      "relationship": "direct"
+    },
+    {
+      "tag": "synergy-villainous-choice",
+      "theme": "Politics",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "politics",
+      "relationship": "direct"
+    },
+    {
+      "tag": "synergy-vote",
+      "theme": "Politics",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "politics",
+      "relationship": "direct"
+    },
+    {
+      "tag": "polymorph",
+      "theme": "Polymorph",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "polymorph",
+      "relationship": "direct"
+    },
+    {
+      "tag": "transforms-creature-into-random",
+      "theme": "Polymorph",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "polymorph",
+      "relationship": "direct"
+    },
+    {
+      "tag": "populate",
+      "theme": "Populate",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "populate",
+      "relationship": "direct"
+    },
+    {
+      "tag": "power-matters",
+      "theme": "Power Matters",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "power-matters",
+      "relationship": "direct"
+    },
+    {
+      "tag": "scales-with-power",
+      "theme": "Power Matters",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "power-matters",
+      "relationship": "direct"
+    },
+    {
+      "tag": "proliferate",
+      "theme": "Proliferate",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "proliferate",
+      "relationship": "direct"
+    },
+    {
+      "tag": "repeatable-proliferate",
+      "theme": "Proliferate",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "proliferate",
+      "relationship": "direct"
+    },
+    {
+      "tag": "prowess",
+      "theme": "Prowess",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "prowess",
+      "relationship": "direct"
+    },
+    {
+      "tag": "cast-trigger-noncreature",
+      "theme": "Prowess",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "prowess",
+      "relationship": "direct"
+    },
+    {
+      "tag": "ramp",
+      "theme": "Ramp",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "ramp",
+      "relationship": "direct"
+    },
+    {
+      "tag": "land-ramp",
+      "theme": "Ramp",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "ramp",
+      "relationship": "direct"
+    },
+    {
+      "tag": "mana-dork",
+      "theme": "Ramp",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "ramp",
+      "relationship": "direct"
+    },
+    {
+      "tag": "mana-producer",
+      "theme": "Ramp",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "ramp",
+      "relationship": "direct"
+    },
+    {
+      "tag": "adds-multiple-mana",
+      "theme": "Ramp",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "ramp",
+      "relationship": "direct"
+    },
+    {
+      "tag": "extra-land",
+      "theme": "Ramp",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "ramp",
+      "relationship": "direct"
+    },
+    {
+      "tag": "combat-ramp",
+      "theme": "Ramp",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "ramp",
+      "relationship": "direct"
+    },
+    {
+      "tag": "reanimate",
+      "theme": "Reanimator",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "reanimator",
+      "relationship": "direct"
+    },
+    {
+      "tag": "recursion",
+      "theme": "Reanimator",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "reanimator",
+      "relationship": "direct"
+    },
+    {
+      "tag": "cheat-death",
+      "theme": "Reanimator",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "reanimator",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "retrace",
+      "theme": "Retrace",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "retrace",
+      "relationship": "direct"
+    },
+    {
+      "tag": "saboteur",
+      "theme": "Saboteurs",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "saboteurs",
+      "relationship": "direct"
+    },
+    {
+      "tag": "combat-damage-trigger",
+      "theme": "Saboteurs",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "saboteurs",
+      "relationship": "direct"
+    },
+    {
+      "tag": "sacrifice-self",
+      "theme": "Sacrifice",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "sacrifice",
+      "relationship": "direct"
+    },
+    {
+      "tag": "synergy-saga",
+      "theme": "Sagas",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "sagas",
+      "relationship": "direct"
+    },
+    {
+      "tag": "saga-matters",
+      "theme": "Sagas",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "sagas",
+      "relationship": "direct"
+    },
+    {
+      "tag": "scry",
+      "theme": "Scry",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "scry",
+      "relationship": "direct"
+    },
+    {
+      "tag": "repeatable-scry",
+      "theme": "Scry",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "scry",
+      "relationship": "direct"
+    },
+    {
+      "tag": "sea-creature",
+      "theme": "Sea Creatures",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "sea-creatures",
+      "relationship": "direct"
+    },
+    {
+      "tag": "islandwalk",
+      "theme": "Sea Creatures",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "sea-creatures",
+      "relationship": "direct"
+    },
+    {
+      "tag": "self-damage",
+      "theme": "Self-Damage",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "self-damage",
+      "relationship": "direct"
+    },
+    {
+      "tag": "life-payment",
+      "theme": "Self-Damage",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "self-damage",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "self-discard",
+      "theme": "Self-Discard",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "self-discard",
+      "relationship": "direct"
+    },
+    {
+      "tag": "discard-self",
+      "theme": "Self-Discard",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "self-discard",
+      "relationship": "direct"
+    },
+    {
+      "tag": "mill-self",
+      "theme": "Self-Mill",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "self-mill",
+      "relationship": "direct"
+    },
+    {
+      "tag": "self-mill",
+      "theme": "Self-Mill",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "self-mill",
+      "relationship": "direct"
+    },
+    {
+      "tag": "sneak",
+      "theme": "Sneak",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "sneak",
+      "relationship": "direct"
+    },
+    {
+      "tag": "sneak-creature",
+      "theme": "Sneak",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "sneak",
+      "relationship": "direct"
+    },
+    {
+      "tag": "sneak-from-library",
+      "theme": "Sneak",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "sneak",
+      "relationship": "direct"
+    },
+    {
+      "tag": "copy-spell",
+      "theme": "Spell Copy",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "spell-copy",
+      "relationship": "direct"
+    },
+    {
+      "tag": "copy-instant-sorcery",
+      "theme": "Spell Copy",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "spell-copy",
+      "relationship": "direct"
+    },
+    {
+      "tag": "copy-ability",
+      "theme": "Spell Copy",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "spell-copy",
+      "relationship": "direct"
+    },
+    {
+      "tag": "storm",
+      "theme": "Spellslinger",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "spellslinger",
+      "relationship": "direct"
+    },
+    {
+      "tag": "copy-spell",
+      "theme": "Spellslinger",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "spellslinger",
+      "relationship": "direct"
+    },
+    {
+      "tag": "storm",
+      "theme": "Storm",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "storm",
+      "relationship": "direct"
+    },
+    {
+      "tag": "storm-count-matters",
+      "theme": "Storm",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "storm",
+      "relationship": "direct"
+    },
+    {
+      "tag": "stun-counter",
+      "theme": "Stun",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "stun",
+      "relationship": "direct"
+    },
+    {
+      "tag": "stun",
+      "theme": "Stun",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "stun",
+      "relationship": "direct"
+    },
+    {
+      "tag": "surveil",
+      "theme": "Surveil",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "surveil",
+      "relationship": "direct"
+    },
+    {
+      "tag": "repeatable-surveil",
+      "theme": "Surveil",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "surveil",
+      "relationship": "direct"
+    },
+    {
+      "tag": "untapper",
+      "theme": "Tap / Untap",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "tap-untap",
+      "relationship": "direct"
+    },
+    {
+      "tag": "tapper",
+      "theme": "Tap / Untap",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "tap-untap",
+      "relationship": "direct"
+    },
+    {
+      "tag": "untap",
+      "theme": "Tap / Untap",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "tap-untap",
+      "relationship": "direct"
+    },
+    {
+      "tag": "tap-outlet",
+      "theme": "Tap / Untap",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "tap-untap",
+      "relationship": "direct"
+    },
+    {
+      "tag": "theft",
+      "theme": "Theft",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "theft",
+      "relationship": "direct"
+    },
+    {
+      "tag": "theft-creature",
+      "theme": "Theft",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "theft",
+      "relationship": "direct"
+    },
+    {
+      "tag": "theft-planeswalker",
+      "theme": "Theft",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "theft",
+      "relationship": "direct"
+    },
+    {
+      "tag": "control-changing-effects",
+      "theme": "Theft",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "theft",
+      "relationship": "direct"
+    },
+    {
+      "tag": "token-generator",
+      "theme": "Tokens",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "tokens",
+      "relationship": "direct"
+    },
+    {
+      "tag": "synergy-token",
+      "theme": "Tokens",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "tokens",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "tutor",
+      "theme": "Toolbox",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "toolbox",
+      "relationship": "direct"
+    },
+    {
+      "tag": "tutor-to-hand",
+      "theme": "Toolbox",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "toolbox",
+      "relationship": "direct"
+    },
+    {
+      "tag": "tutor-land",
+      "theme": "Toolbox",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "toolbox",
+      "relationship": "direct"
+    },
+    {
+      "tag": "tutor-creature",
+      "theme": "Toolbox",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "toolbox",
+      "relationship": "direct"
+    },
+    {
+      "tag": "top-deck-manipulation",
+      "theme": "Topdeck",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "topdeck",
+      "relationship": "direct"
+    },
+    {
+      "tag": "library-manipulation",
+      "theme": "Topdeck",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "topdeck",
+      "relationship": "direct"
+    },
+    {
+      "tag": "peek-library",
+      "theme": "Topdeck",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "topdeck",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "triggered-ability",
+      "theme": "Triggered Abilities",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "triggered-abilities",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "trigger-doubler",
+      "theme": "Triggered Abilities",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "triggered-abilities",
+      "relationship": "direct"
+    },
+    {
+      "tag": "treasure-token",
+      "theme": "Treasure",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "treasure",
+      "relationship": "direct"
+    },
+    {
+      "tag": "treasure-matters",
+      "theme": "Treasure",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "treasure",
+      "relationship": "direct"
+    },
+    {
+      "tag": "unblockable",
+      "theme": "Unblockable",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "unblockable",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gives-unblockable",
+      "theme": "Unblockable",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "unblockable",
+      "relationship": "direct"
+    },
+    {
+      "tag": "unique-evasion",
+      "theme": "Unblockable",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "unblockable",
+      "relationship": "direct"
+    },
+    {
+      "tag": "super-menace",
+      "theme": "Unblockable",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "unblockable",
+      "relationship": "direct"
+    },
+    {
+      "tag": "evasion",
+      "theme": "Unblockable",
+      "weight": 2,
+      "confidence": 1.0,
+      "group": "unblockable",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "synergy-vehicle",
+      "theme": "Vehicles",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "vehicles",
+      "relationship": "direct"
+    },
+    {
+      "tag": "vehicle-matters",
+      "theme": "Vehicles",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "vehicles",
+      "relationship": "direct"
+    },
+    {
+      "tag": "synergy-solo-attack",
+      "theme": "Voltron",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "voltron",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gives-double-strike",
+      "theme": "Voltron",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "voltron",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gains-double-strike",
+      "theme": "Voltron",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "voltron",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gives-evasion",
+      "theme": "Voltron",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "voltron",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "power-boost-to-self",
+      "theme": "Voltron",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "voltron",
+      "relationship": "direct"
+    },
+    {
+      "tag": "scales-with-power",
+      "theme": "Voltron",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "voltron",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "wheel",
+      "theme": "Wheels",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "wheels",
+      "relationship": "direct"
+    },
+    {
+      "tag": "wheel-one-sided",
+      "theme": "Wheels",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "wheels",
+      "relationship": "direct"
+    },
+    {
+      "tag": "ditch-hand",
+      "theme": "Wheels",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "wheels",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "x-spell",
+      "theme": "X Spells",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "x-spells",
+      "relationship": "direct"
+    },
+    {
+      "tag": "scales-with-mana-value",
+      "theme": "X Spells",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "x-spells",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "cost-ignorer",
+      "theme": "Big Mana",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "big-mana",
+      "relationship": "direct"
+    },
+    {
+      "tag": "bottomless-mana-sink",
+      "theme": "Big Mana",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "big-mana",
+      "relationship": "direct"
+    },
+    {
+      "tag": "adds-multiple-mana",
+      "theme": "Big Mana",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "big-mana",
+      "relationship": "direct"
+    },
+    {
+      "tag": "high-mana-value-matters",
+      "theme": "Big Mana",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "big-mana",
+      "relationship": "direct"
+    },
+    {
+      "tag": "toughness-matters",
+      "theme": "Toughness Matters",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "toughness",
+      "relationship": "direct"
+    },
+    {
+      "tag": "toughness-matters-self",
+      "theme": "Toughness Matters",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "toughness",
+      "relationship": "direct"
+    },
+    {
+      "tag": "buttstrike",
+      "theme": "Toughness Matters",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "toughness",
+      "relationship": "direct"
+    },
+    {
+      "tag": "counters-matter",
+      "theme": "Counters Matter",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "counters-matter",
+      "relationship": "direct"
+    },
+    {
+      "tag": "pp-counters-matter",
+      "theme": "Counters Matter",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "counters-matter",
+      "relationship": "direct"
+    },
+    {
+      "tag": "counter-fuel",
+      "theme": "Counters Matter",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "counters-matter",
+      "relationship": "direct"
+    },
+    {
+      "tag": "stax",
+      "theme": "Stax",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "stax",
+      "relationship": "direct"
+    },
+    {
+      "tag": "cost-increaser",
+      "theme": "Stax",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "stax",
+      "relationship": "direct"
+    },
+    {
+      "tag": "prevent-cast",
+      "theme": "Stax",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "stax",
+      "relationship": "direct"
+    },
+    {
+      "tag": "prevent-activation",
+      "theme": "Stax",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "stax",
+      "relationship": "direct"
+    },
+    {
+      "tag": "prevent-attack",
+      "theme": "Stax",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "stax",
+      "relationship": "direct"
+    },
+    {
+      "tag": "hate-noncreature",
+      "theme": "Stax",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "stax",
+      "relationship": "direct"
+    },
+    {
+      "tag": "extra-upkeep",
+      "theme": "Stax",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "stax",
+      "relationship": "direct"
+    },
+    {
+      "tag": "flicker",
+      "theme": "Blink",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "blink",
+      "relationship": "direct"
+    },
+    {
+      "tag": "flicker-self",
+      "theme": "Blink",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "blink",
+      "relationship": "direct"
+    },
+    {
+      "tag": "flicker-slow",
+      "theme": "Blink",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "blink",
+      "relationship": "direct"
+    },
+    {
+      "tag": "haven",
+      "theme": "Blink",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "blink",
+      "relationship": "direct"
+    },
+    {
+      "tag": "exile-self",
+      "theme": "Blink",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "blink",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "clone",
+      "theme": "Clones",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "clones",
+      "relationship": "direct"
+    },
+    {
+      "tag": "copy-creature",
+      "theme": "Clones",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "clones",
+      "relationship": "direct"
+    },
+    {
+      "tag": "copy-permanent",
+      "theme": "Clones",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "clones",
+      "relationship": "direct"
+    },
+    {
+      "tag": "bounce",
+      "theme": "Tempo",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "tempo",
+      "relationship": "direct"
+    },
+    {
+      "tag": "counterspell",
+      "theme": "Tempo",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "tempo",
+      "relationship": "direct"
+    },
+    {
+      "tag": "tap-target",
+      "theme": "Tempo",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "tempo",
+      "relationship": "direct"
+    },
+    {
+      "tag": "tapper",
+      "theme": "Tempo",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "tempo",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "gains-indestructible",
+      "theme": "Indestructible",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "indestructible",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gives-indestructible",
+      "theme": "Indestructible",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "indestructible",
+      "relationship": "direct"
+    },
+    {
+      "tag": "extra-upkeep",
+      "theme": "Extra Upkeeps",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "extra-upkeeps",
+      "relationship": "direct"
+    },
+    {
+      "tag": "paradox",
+      "theme": "Paradox",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "paradox",
+      "relationship": "direct"
+    },
+    {
+      "tag": "suspend",
+      "theme": "Suspend",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "suspend",
+      "relationship": "direct"
+    },
+    {
+      "tag": "synergy-suspend",
+      "theme": "Suspend",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "suspend",
+      "relationship": "direct"
+    },
+    {
+      "tag": "keyword-soup",
+      "theme": "Keywords",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "keywords",
+      "relationship": "direct"
+    },
+    {
+      "tag": "repeated-keyword",
+      "theme": "Keywords",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "keywords",
+      "relationship": "direct"
+    },
+    {
+      "tag": "unique-keyword",
+      "theme": "Keywords",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "keywords",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "french-vanilla",
+      "theme": "Keywords",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "keywords",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "cards-in-graveyard-matter",
+      "theme": "Graveyard",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "graveyard",
+      "relationship": "direct"
+    },
+    {
+      "tag": "undergrowth",
+      "theme": "Graveyard",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "graveyard",
+      "relationship": "direct"
+    },
+    {
+      "tag": "seek-to-graveyard",
+      "theme": "Graveyard",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "group": "graveyard",
+      "relationship": "direct"
+    },
+    {
+      "tag": "gives-flash",
+      "theme": "Flash",
+      "weight": 4,
+      "confidence": 1.0,
+      "group": "flash",
+      "relationship": "direct"
+    },
+    {
+      "tag": "flash",
+      "theme": "Flash",
+      "weight": 3,
+      "confidence": 1.0,
+      "group": "flash",
+      "relationship": "direct"
+    },
+    {
+      "tag": "fog",
+      "theme": "Turbo Fog",
+      "weight": 4.5,
+      "confidence": 1.0,
+      "group": "turbo-fog",
+      "relationship": "direct"
+    },
+    {
+      "tag": "damage-prevention",
+      "theme": "Turbo Fog",
+      "weight": 2.5,
+      "confidence": 1.0,
+      "group": "turbo-fog",
+      "relationship": "supporting"
+    },
+    {
+      "tag": "mutate",
+      "theme": "Mutate",
+      "weight": 5,
+      "confidence": 1.0,
+      "group": "mutate",
+      "relationship": "direct"
+    }
+  ],
+  "typals_from_subtypes": true,
+  "tag_diminishing_factor": 0.5,
+  "combined_rules": [
+    {
+      "id": "aggro-haste-or-attack-trigger",
+      "theme": "Aggro",
+      "weight": 2.0,
+      "confidence": 1.0,
+      "any_tag_groups": [
+        [
+          "attack-trigger",
+          "extra-combat-phase"
+        ]
+      ],
+      "keyword_patterns": [
+        "\\bhaste\\b"
+      ],
+      "require_keyword_match": true,
+      "relationship": "supporting"
+    },
+    {
+      "id": "ramp-mana-producer-untap",
+      "theme": "Ramp",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "all_tags": [
+        "extra-untap"
+      ],
+      "any_tag_groups": [
+        [
+          "untapper",
+          "untapper-creature"
+        ]
+      ],
+      "text_patterns": [
+        "\\buntap\\s+(?:target|up to\\s+\\w+|all)\\s+lands?\\b",
+        "\\buntap\\s+(?:target|up to\\s+\\w+|all)\\s+creatures?\\b.{0,100}\\bthat creature gains\\b.{0,80}\\{T\\}\\s*:\\s*Add"
+      ],
+      "require_text_match": true,
+      "relationship": "direct"
+    },
+    {
+      "id": "annihilator-keyword",
+      "theme": "Annihilator",
+      "weight": 5.0,
+      "confidence": 1.0,
+      "keyword_patterns": [
+        "\\bannihilator(?:\\s+\\d+)?\\b"
+      ],
+      "require_keyword_match": true,
+      "relationship": "direct"
+    },
+    {
+      "id": "annihilator-permanent-sacrifice-control",
+      "theme": "Control",
+      "weight": 3.5,
+      "confidence": 1.0,
+      "all_tags": [
+        "removal-permanent"
+      ],
+      "any_tag_groups": [
+        [
+          "removal-sacrifice"
+        ]
+      ],
+      "keyword_patterns": [
+        "\\bannihilator(?:\\s+\\d+)?\\b"
+      ],
+      "require_keyword_match": true,
+      "relationship": "direct"
+    }
+  ]
+}
